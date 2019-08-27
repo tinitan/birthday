@@ -43,11 +43,12 @@
   position: relative;
     top: 165px;
     margin: auto;
-    width: 400px;
+    width: 650px;
     height: 370px;
     background: url(cake.png);
     background-position: center;
     background-repeat: no-repeat;
+    transform: scale(0.7);
   }
 
   #rose {
@@ -91,8 +92,26 @@
     border-bottom-right-radius: 10px 10px;
     border-bottom-left-radius: 10px 10px;
     
-    top: 168px;
-    left: 48.3%;
+    top: 175px;
+    left: 58.3%;
+    margin: auto;
+    /*   http://www.css3.info/preview/box-shadow/ */
+    box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
+    transform-origin: bottom;
+    animation: flicker 1s ease-in-out alternate infinite;
+  }
+   .lit2 {
+    background: linear-gradient(to bottom, #FFF6D9, #FBC36C);
+    width: 15px;
+    height: 45px;
+    /*  Info on border radius. http://www.css3.info/preview/rounded-border/ */
+    border-top-left-radius: 10px 35px;
+    border-top-right-radius: 10px 35px;
+    border-bottom-right-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    
+    top: 175px;
+    left: 52.8%;
     margin: auto;
     /*   http://www.css3.info/preview/box-shadow/ */
     box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
@@ -140,6 +159,7 @@
 
 <div id="flame" class="lit" onclick="playAudio()" ondblclick="pauseAudio()"></div>
 
+<div id="flame" class="lit2" onclick="playAudio()" ondblclick="pauseAudio()"></div>
 
 
 <div class="cake"></div>
