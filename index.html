@@ -2,198 +2,153 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
     
     <title>Happy Birthday!</title>
-   
-<!--=== mobil 용==  -->
-<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css" />
-<script src="./js/jquery-1.11.1.min.js"></script>
-<script src="./js/jquery.mobile-1.4.5.min.js"></script>
-<!--<link rel="stylesheet" href="nav.css" /> --><!-- 네이용 css -->
-<!-- 공통 연결 -->
-      
 
 <style>
+    html {
+  background-image:linear-gradient(#09f, #fff);
+  height:100vh;
+}
 
- body {
-    background: linear-gradient(to right, #e2b8f7, #d4bafa, #c7bcfb, #b9befb, #acbff9);
-    cursor: crosshair;
-    /*perspective: 1000px;
-    /*transform-style: preserve-3d;*/
-    /*font-family: "Pacifico",cursive;*/
-    /*border : solid 3px;*/
-  } 
-
-  h1 {
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    top: 30px;
-    font-size: 45px;
-    
-    font-family: 'Concert One', cursive;
-    font-weight: 400;
-   
-    letter-spacing: 6px;
-  }
-
+.flower {
+  height:228px;
+  width:238px;
+  background-image: 
+  url(cake.png);
+  background-size: 238px 228px;/*폭, 높이 */
+  left:50%;
+  top:50%;
+  position:absolute;
  
- .cake {
+  transform:translate(-50%,-50%);
+}
+
+.flower:after {
   
-  position: absolute;
-    top: 165px;
-    left:-20%;
-    width: 530px;
-    height: 370px;
-    background: url(cake.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    transform: scale(0.7);
-    
-  }
+}
 
-  #rose {
-    position: relative;
-    height: 200px;
-    width: 300px;
-    top: 520px;
 
-    left: 17%;
-    /*transform: translateZ(120px);*/
-   
-  }
-  /*#rose1 {
-    position: relative;
-    height: 200px;
-    width: 250px;
-    top: 230px;
-    left:44%;
-    transform: translateZ(120px);
-  }
-#rose2 {
-    position: relative;
-    height: 200px;
-    width: 250px;
-    top: 230px;
-    left:-5%;
-    transform: translateZ(120px);
-  }*/
+.petal {
+ 
+  position:absolute;
+  transform-origin:center bottom;
+ }
 
-  #flame {
-    position: absolute;
-    z-index: 10;
-    
-  }
+.petal:nth-child(1) {
+  background: linear-gradient(to bottom, #FFF6D9, #FBC36C);
+  left:59.5%;
+  top:30%;
+  width: 20px;
+  height: 50px;
+  border-top-left-radius: 10px 35px;
+  border-top-right-radius: 10px 35px;
+  border-bottom-right-radius: 10px 10px;
+  border-bottom-left-radius: 10px 10px;
+  transform:rotate(0deg) translateY(-0vmin);
+  animation: flicker 1s ease-in-out alternate infinite;
+}
 
-  .lit {
-    background: linear-gradient(to bottom, #FFF6D9, #FBC36C);
-    width: 15px;
-    height: 45px;
-    /*  Info on border radius. http://www.css3.info/preview/rounded-border/ */
-    border-top-left-radius: 10px 35px;
-    border-top-right-radius: 10px 35px;
-    border-bottom-right-radius: 10px 10px;
-    border-bottom-left-radius: 10px 10px;
-    
-    top: 175px;
-    left: 50.5%;
-    margin: auto;
-    /*   http://www.css3.info/preview/box-shadow/ */
-    box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
-    transform-origin: bottom;
-    animation: flicker 1s ease-in-out alternate infinite;
-  }
-   .lit2 {
-    background: linear-gradient(to bottom, #FFF6D9, #FBC36C);
-    width: 15px;
-    height: 45px;
-    /*  Info on border radius. http://www.css3.info/preview/rounded-border/ */
-    border-top-left-radius: 10px 35px;
-    border-top-right-radius: 10px 35px;
-    border-bottom-right-radius: 10px 10px;
-    border-bottom-left-radius: 10px 10px;
-    
-    top: 175px;
-    left: 65.3%;
-    margin: auto;
-    /*   http://www.css3.info/preview/box-shadow/ */
-    box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
-    transform-origin: bottom;
-    animation: flicker 1s ease-in-out alternate infinite;
-  }
+.petal:nth-child(2) {
+  background: linear-gradient(to bottom, #FFF6D9, #FBC36C);
+  left:56.5%;
+  top:30%;
+  width: 20px;
+  height: 50px;
+  border-top-left-radius: 10px 35px;
+  border-top-right-radius: 10px 35px;
+  border-bottom-right-radius: 10px 10px;
+  border-bottom-left-radius: 10px 10px;
+  transform:rotate(0deg) translateY(-0vmin);
+  animation: flicker 1s ease-in-out alternate infinite;
+}
 
-  @keyframes flicker {
+.petal:nth-child(3) {
+  background-color:#f09;
+  left:50%;
+  top:30%;
+  border-radius:50%;
+  height:55vmin;
+  width:55vmin;
+  transform:rotate(60deg) translateY(-15vmin);
+  
+}
+
+.petal:nth-child(4) {
+  background-color:#f09;
+  left:50%;
+  top:30%;
+  border-radius:50%;
+  height:55vmin;
+  width:55vmin;
+  transform:rotate(180deg) translateY(-15vmin);
+}
+
+.petal:nth-child(5) {
+  background-color:#f09;
+  left:50%;
+  top:30%;
+  border-radius:50%;
+  height:55vmin;
+  width:55vmin;
+  transform:rotate(240deg) translateY(-5vmin);
+}
+
+.petal:nth-child(6) {
+  background-image: url(cake.png);
+  left:50%;
+  top:30%;
+
+  height:228px;
+  width:238px;
+  background-size: 238px 228px;/*폭, 높이 */
+  transform:rotate(0deg) translateY(5vmin);
+ 
+}
+
+@keyframes flicker {
     0% {
       transform: skewX(5deg);
-      box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
+      
     }
     25% {
       transform: skewX(-5deg);
-      box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
+     
     }
     50% {
       transform: skewX(10deg);
-      box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
-    }
+      
     75% {
       transform: skewX(-10deg);
-      box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
+      
     }
     100% {
       transform: skewX(5deg);
-      box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
+     
     }
   }
-  
-
-    </style>
-<!--<script>
-  window.console = window.console || function(t) {};
-</script>-->
-
-
-</head>
-<body translate="no">
-
-
-<h1>생일 축하 합니다!</h1>
-
-<!--<span>🎉</span>-->
-
-<div id="flame" class="lit" onclick="playAudio()" ondblclick="pauseAudio()"></div>
-
-<div id="flame" class="lit2" onclick="playAudio()" ondblclick="pauseAudio()"></div>
-
-
-<div class="cake"></div>
-
-<img id="rose" src="" alt="">
-<!--<img id="rose1" src="" alt="">
-<img id="rose2" src="" alt="">-->
-
-<audio id="myAudio">
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="생일송.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  </style>
 
 <script>
-var x = document.getElementById("myAudio"); 
-
-function playAudio() { 
-  x.play(); 
-  
-  document.getElementById("rose").src = "독도.jpg";
- // document.getElementById("rose1").src = "성인봉.jpg";
- // document.getElementById("rose2").src = "비경.jpg";
-  //<img src="http://pngimg.com/uploads/rose/rose_PNG66790.png" alt="tistory_logo" width="100%" height="200px">
-} 
-
-function pauseAudio() { 
-  x.pause(); 
-  
-} 
+  window.console = window.console || function(t) {};
 </script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+
+<body translate="no">
+<div> 
+<div class="petal"></div>
+<div class="petal"></div>
+<div class="petal"></div>
+<div class="petal"></div>
+<div class="petal"></div>
+<div class="petal"></div>
+<!--<div class="flower">-->
+</div>
 </body>
 </html>
